@@ -11,7 +11,7 @@ double fibonacci(int);
 int main(int argc, char **argv)
 {
     printf("Let's get started.\n");
-    printf("What is you name?\n");
+    printf("What is your name?\n");
     scanf(" %s", username);
     printf("Hello, %s.\n", username);
     menu();
@@ -43,7 +43,7 @@ void menu(void)
         }
     }
 }
-unsigned getint(void)
+unsigned getint(void) 
 {
     bool got = false;
     char totest[31] = "";
@@ -63,7 +63,7 @@ unsigned getint(void)
             }
         }
         if (got == false){
-            printf("Please give me an interger.\n");
+            printf("Please give me an integer.\n");
         }
     }
     result = atoi(totest);
