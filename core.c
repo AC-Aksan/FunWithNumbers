@@ -8,6 +8,7 @@ char username[16] = "Unknown";
 void menu(void);
 unsigned int getint(void);
 double fibonacci(int);
+double factorial(int);
 int main(int argc, char **argv) // Greets and fetches user's name
 {
     printf("Let's get started.\n");
@@ -25,6 +26,7 @@ void menu(void) // Menu Subroutine
         if (printmenu == true){ // Prints Menu
             printf("What do you wish to do today?\n");
             printf(" 1. Fibonacci Numbers\n");
+            printf(" 2. Factorials\n");
             printf(" 0. Exit\n");
         }
         printmenu = true;
@@ -32,6 +34,10 @@ void menu(void) // Menu Subroutine
         if (response == '1'){ // Selects and runs fibonacci, should add functionality to avoid return to menu
             printf("Fibonacci numbers it is. \n");
             printf(" %.0f \n",fibonacci(getint()));
+        }
+        else if (response == '2'){ // Selects and runs factorial
+            printf("Factorials it is. \n");
+            printf(" %.0f \n",factorial(getint()));
         }
         else if (response == '0'){ // Quits out of program
             quit = true;
@@ -69,7 +75,7 @@ unsigned getint(void) // Pesters the user on the command line until it gets an i
     result = atoi(totest);
     return result;
 }
-double fibonacci(int n) // Calculated fib numbers
+double fibonacci(int n) // Calculates fibonacci numbers
 {
     double r0 = 0; // Running variable, set at Fib(0) 
     double r1 = 1; // Running variable, set at Fib(1) 
@@ -86,4 +92,13 @@ double fibonacci(int n) // Calculated fib numbers
         }
     }
     return r1;
+}
+double factorial(int n) // Calculates factorials of numbers
+{
+    int r = 1; // Runner to be used to calculate the factorial
+    int i = 0;
+    for(i=1; i<=n; i++){
+        r = r*i;
+    }
+    return r;
 }
