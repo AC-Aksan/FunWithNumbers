@@ -49,10 +49,10 @@ void menu(void) // Menu Subroutine needs to parse outputs better
         }
     }
 }
-unsigned getint(void) // Pesters the user on the command line until it gets an integer, need to add positive confirmation
+unsigned getint(void) // Pesters the user on the command line until it gets an integer, need to add positive confirmation, need to add cap.
 {
     bool got = false;
-    char totest[31] = ""; // Accepts up to 32 characters
+    char totest[15] = ""; // Accepts up to 16 characters
     int w = 0;
     int l = 0;
     unsigned result = 0;
