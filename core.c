@@ -7,8 +7,8 @@
 char username[16] = "Unknown";
 void menu(void);
 unsigned int getint(void);
-double fibonacci(int);
-double factorial(int);
+double fibonacci(unsigned);
+double factorial(unsigned);
 int main(int argc, char **argv) // Greets and fetches user's name
 {
     printf("Let's get started.\n");
@@ -17,7 +17,7 @@ int main(int argc, char **argv) // Greets and fetches user's name
     printf("Hello, %s.\n", username);
     menu();
 }
-void menu(void) // Menu Subroutine
+void menu(void) // Menu Subroutine needs to parse outputs better
 {
     char response = 0;
     bool quit = false;
@@ -55,7 +55,7 @@ unsigned getint(void) // Pesters the user on the command line until it gets an i
     char totest[31] = ""; // Accepts up to 32 characters
     int w = 0;
     int l = 0;
-    int result = 0;
+    unsigned result = 0;
     printf("%s please give me a number.\n", username);
     while (got == false){
                 scanf(" %s", totest);
@@ -72,10 +72,10 @@ unsigned getint(void) // Pesters the user on the command line until it gets an i
             printf("Please give me an integer.\n");
         }
     }
-    result = atoi(totest);
+    result = atol(totest);
     return result;
 }
-double fibonacci(int n) // Calculates fibonacci numbers
+double fibonacci(unsigned n) // Calculates fibonacci numbers
 {
     double r0 = 0; // Running variable, set at Fib(0) 
     double r1 = 1; // Running variable, set at Fib(1) 
@@ -93,10 +93,10 @@ double fibonacci(int n) // Calculates fibonacci numbers
     }
     return r1;
 }
-double factorial(int n) // Calculates factorials of numbers
+double factorial(unsigned n) // Calculates factorials of numbers
 {
-    int r = 1; // Runner to be used to calculate the factorial
-    int i = 0;
+    double r = 1; // Runner to be used to calculate the factorial
+    double i = 0;
     for(i=1; i<=n; i++){
         r = r*i;
     }
